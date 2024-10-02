@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E COMMRCE</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@508&display=swap"
+      rel="stylesheet"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .top-navbar {
+        width: 100%;
+        height: 7vh;
+        background-color: #a9a9a926;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+      }
+      .top-icon {
+        margin-left: 45px;
+      }
+      .top-icon i {
+        font-size: 20px;
+        color: #1c1c50;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      .other-links {
+        margin-right: 33px;
+      }
+      .other-links i {
+        font-size: 20px;
+        color: #1c1c50;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      #btn-login {
+        width: 100px;
+        border: 2px solid #1c1c50;
+        color: #1c1c50;
+        font-weight: bold;
+        border-radius: 5px;
+        height: 5vh;
+        transition: 0.5s ease;
+        cursor: pointer;
+      }
+      #btn-login a {
+        text-decoration: none;
+        color: #1c1c50;
+        transition: 0.5s ease;
+      }
+      #btn-login a:hover {
+        background-color: #1c1c50;
+        color: white;
+      }
+      #btn-login:hover {
+        background-color: #1c1c50;
+        color: white;
+      }
+      #btn-signup {
+        width: 100px;
+        border: 2px solid #1c1c50;
+        color: #1c1c50;
+        font-weight: bold;
+        border-radius: 5px;
+        height: 5vh;
+        transition: 0.5s ease;
+        cursor: pointer;
+      }
+      #btn-signup a {
+        text-decoration: none;
+        color: #1c1c50;
+        transition: 0.5s ease;
+      }
+      #btn-signup a:hover {
+        background-color: #1c1c50;
+        color: white;
+      }
+      #btn-signup:hover {
+        background-color: #1c1c50;
+        color: white;
+      }
+      @media screen and (max-width: 500px) {
+        .top-icon {
+          margin-left: 30px;
+        }
+        .top-icon i {
+          font-size: 15px;
+        }
+        .other-links i {
+          font-size: 15px;
+        }
+        #bnt-login {
+          width: 60px;
+          height: 5vh;
+        }
+        #bnt-signup {
+          width: 70px;
+          height: 5vh;
+        }
+      }
+      @media screen and (max-width: 350px) {
+        .top-icon {
+          margin-left: 10px;
+        }
+        .top-icon i {
+          font-size: 10px;
+        }
+        .other-links {
+          margin-right: 10px;
+        }
+        .other-links i {
+          font-size: 10px;
+        }
+        #bnt-login {
+          width: 50px;
+          height: 5vh;
+          font-size: 13px;
+        }
+        #bnt-signup {
+          width: 60px;
+          height: 5vh;
+          font-size: 13px;
+        }
+      }
+      @media screen and (max-width: 350px) {
+        .top-icon {
+          margin-left: 5px;
+        }
+        .top-icon i {
+          font-size: 12px;
+        }
+        .other-links {
+          margin-right: 10px;
+        }
+        .other-links i {
+          font-size: 12px;
+        }
+        #bnt-login {
+          width: 40px;
+          height: 5vh;
+          font-size: 10px;
+        }
+        #bnt-signup {
+          width: 50px;
+          height: 5vh;
+          font-size: 10px;
+        }
+      }
+
+      /*---------------------------------- home section-------------------------------------- */
+
+      .home-section {
+        width: 100%;
+        height: 93vh;
+        background-color: #a9a9a926;
+      }
+      #navbar {
+        background-color: #1c1c50;
+        font-size: 16px;
+        font-family: "Roboto Sleb", serif;
+      }
+      #navbar .nav-link {
+        color: white;
+        font-weight: bold;
+        margin-left: 5px;
+        transition: 0.5s ease;
+      }
+      #navbar .nav-link:hover {
+        color: white;
+        border-radius: 5px;
+      }
+      .dropdown li a {
+        color: white;
+      }
+      #search-btn {
+        color: white;
+        border: 1px solid white;
+      }
+      #search-btn:hover {
+        background-color: #1c1c50;
+      }
+
+      /* <!------------------------- home content--------------------------- --> */
+      .home {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 0;
+        font-family: "Roboto Sleb", serif;
+      }
+      .home .img {
+        flex: 1 1 400px;
+      }
+      .home .img img {
+        width: 100%;
+      }
+      .home .content {
+        flex: 1 1 400px;
+        margin-top: 30px;
+      }
+      .content h3 {
+        margin-left: 70px;
+        font-size: 50px;
+        text-shadow: 1px 1px 1px black;
+        color: #1c1c50;
+        font-weight: bold;
+      }
+      .content h3 span {
+        font-size: 40px;
+      }
+      .content p {
+        margin-left: 70px;
+        color: #1c1c50;
+      }
+      .content #shopnow {
+        margin-left: 70px;
+        width: 200px;
+        height: 30px;
+        border: 2px solid #1c1c50;
+        font-weight: bold;
+        transition: 0.5s ease;
+        cursor: pointer;
+      }
+      .content #shopnow:hover {
+        background-color: #1c1c50;
+        color: white;
+      }
+      @media screen and (max-width: 800px) {
+        .content h3 {
+          margin-left: 50px;
+          font-size: 40px;
+        }
+        .content p {
+          margin-left: 50px;
+        }
+        .content #shopnow {
+          margin-left: 50px;
+        }
+      }
+      @media screen and (max-width: 570px) {
+        .content h3 {
+          margin-left: 20px;
+        }
+        .content p {
+          margin-left: 20px;
+        }
+        .content #shopnow {
+          margin-left: 20px;
+        }
+      }
+      @media screen and (max-width: 799px) {
+        .home-section {
+          height: 150vh;
+        }
+      }
+      @media screen and (max-width: 550px) {
+        .home-section {
+          height: 100vh;
+        }
+      }
+
+      /* <!------------------------------- top cards -----------------------------------> */
+
+      #top-card {
+        margin-top: 30px;
+        font-family: "Roboto Sleb", serif;
+      }
+      #top-card .card img {
+        height: 60vh;
+      }
+      #top-card h5 {
+        color: #1c1c50;
+        font-weight: bold;
+      }
+      #top-card button {
+        width: 150px;
+        height: 33px;
+        letter-spacing: 1px;
+        background: transparent;
+        color: #1c1c50;
+        border: 2px solid #1c1c50;
+        font-weight: bold;
+        transition: 0.5s ease;
+        cursor: pointer;
+      }
+      #top-card button:hover {
+        background: #1c1c50;
+        color: white;
+      }
+
+      /* <!----------------------------------- banner-----------------------------------------> */
+
+      .banner {
+        width: 100%;
+        height: 50vh;
+        margin-top: 50px;
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+          url(image/banner.png);
+      }
+      .banner .content {
+        text-align: center;
+        padding-top: 100px;
+      }
+      .banner .content h1 {
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        letter-spacing: 2px;
+      }
+      .banner .content p {
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        letter-spacing: 2px;
+      }
+      #bannerbtn button {
+        width: 150px;
+        height: 30px;
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+        transition: 0.5s ease;
+        cursor: pointer;
+      }
+      #bannerbtn button:hover {
+        background-color: #1c1c50;
+        border: none;
+      }
+
+      /* <!------------------------------------ product cards ----------------------------------> */
+
+      #product-cards {
+        font-family: "Roboto Sleb", serif;
+        margin-top: 100px;
+      }
+      #product-cards .card {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      #product-cards h1 {
+        margin-top: 30px;
+        color: #1c1c50;
+        text-shadow: 1px 1px 1px black;
+      }
+      #product-cards h3 {
+        letter-spacing: 2px;
+        color: #1c1c50;
+        font-weight: bold;
+
+        text-shadow: 1px 1px 1px black;
+      }
+      #product-cards h5 span{
+        float: right;
+        color: #1c1c50;
+        cursor: pointer;
+
+      }
+      .star{
+        color: rgb(255, 187, 0);
+      }
+      #viewmorebtn{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        text-decoration: none;
+        margin-top: 30px;
+        width: 200px;
+        height: 32px;
+        color: #1c1c50;
+        letter-spacing: 4px;
+        font-weight: bold;
+        background: transparent;
+        border: 2px solid #1c1c50;
+        transition: 0.5s ease;
+
+      }
+      #viewmorebtn:hover{
+        background-color: #1c1c50;
+        color: white;
+      }
+
+      /* <!--------------------------------- OFFER --------------------------------> */
+      #offer{
+        margin-top: 50px;
+      }
+      #offer i{
+        font-size: 60px;
+        color: #1c1c50;
+      }
+
+      /* <!---------------------------------- footer ----------------------------------> */
+
+      #footer{
+        padding: 0 0 30px 0;
+        color: #d0d0d0;
+        font-size: 14px;
+        background: #1c1c50;
+        font-family: "Roboto Sleb", serif;
+      }
+      #footer .footer-top{
+        padding: 60px 0 30px;
+        background: #1c1c50;
+        color: white;
+      }
+      #footer .footer-top .footer-content h3{
+        color: white;
+        text-shadow: 1px 1px 1px black;
+
+      }
+      #footer .footer-top .footer-content h4{
+        font-size: 22px;
+        margin: 0 0 300px 0;
+        padding: 2px 0 2px 0;
+        line-height: 1;
+        font-weight: 700;
+      }
+      #footer .footer-top .footer-content p{
+        font-size: 14px;
+        margin: 0;
+       color: white;
+        line-height: 1;
+        font-weight: 700;
+      }
+      #footer .footer-top h4{
+        font-size: 16px;
+        font-weight: bold;
+        position: relative;
+        padding-bottom: 12px;
+      }
+      #footer .footer-top .footer-links{
+        margin-bottom: 30px;
+      }
+      #footer .footer-top .footer-links ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      #footer .footer-top .footer-links ul li{
+        padding-right: 10px 0;
+        display: flex;
+        align-items: center;
+      }
+      #footer .footer-top .footer-links ul li:first-child{
+        padding: 0;
+      }
+      #footer .footer-top .footer-links ul li a{
+        color: white;
+        line-height: 2;
+      }
+      #footer .footer-top .social-links a{
+        font-size: 18px;
+        display: inline-block;
+        color: white;
+        line-height: 1;
+        padding-right: 4px;
+        border-radius: 50px;
+        text-align: center;
+        width: 36px;
+        height: 36px;
+        transition: 0.5s ease;
+      }
+      #footer .copyright{
+        text-align: center;
+        float: left;
+      }
+      #footer .credits{
+        float: right;
+        text-align: center;
+      }
+
+      /* <!------------------------------------------- login ------------------------------------> */
+
+      .login{
+        width: 50%;
+        margin: 20px;
+        font-family: "Roboto Sleb", serif;
+      }
+      #side1{
+        background-color: #1c1c50;
+        height: 76vh;
+        border-radius: 5px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      #side1 h3{
+        color: white;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px black;
+        margin-top: 200px;
+        align-items: center;
+        text-align: center;
+      }
+      #side1 p{
+        color: white;
+        font-weight: bold;
+        align-items: center;
+        text-align: center;
+      }
+      #btn{
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+        border: 2px solid white;
+      }
+      #btn a{
+        text-decoration: none;
+        color: white;
+      }
+      #side2{
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        align-items: center;
+        text-align: center;
+      }
+      #side2 h3{
+        margin-top: 50px;
+        color: #1c1c50;
+        font-weight: bold;
+      }
+      #side2 .inp{
+        margin-top: 32px;
+      }
+      #side2 input{
+        width: 500px;
+        margin-top: 20px;
+        height: 36px;
+        align-items: center;
+      }
+      #side2 p{
+        margin-top: 20px;
+        cursor: pointer;
+      }
+
+      #side2 .icon i{
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      #login{
+        margin-top: 10px;
+      }
+      #login button{
+        width: 200px;
+        height: 32px;
+        color: white;
+        background-color: #1c1c50;
+      }
+
+      @media screen and(max-width:992px){
+        
+        #side2 input{
+            width: 300px;
+      }
+    }
+    @media screen and(max-width:330px){
+        
+        #side2 input{
+            width: 200px;
+      }
+    }
+
+
+
+      
+
+
+    </style>
+  </head>
+  <body>
+    <div class="top-navbar">
+      <div class="top-icon">
+        <i class="bx bxl-facebook"></i>
+        <i class="bx bxl-twitter"></i>
+        <i class="bx bxl-instagram"></i>
+      </div>
+      <div class="other-links">
+        <button id="btn-login"><a href="login.html">Login</a></button>
+        <button id="btn-signup"><a href="signup.html">Sign Up</a></button>
+        <i class="bx bxs-user"></i>
+        <i class="bx bxs-shopping-bag-alt"></i>
+      </div>
+    </div>
+
+    <!-- <div class="home-section"> -->
+      <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"
+            ><img src="image/fashion-removebg-preview.png" alt="" width="80px"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span
+              ><i class="bx bx-bar-chart-square" style="color: white"></i
+            ></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="clothe.html">Clothe</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Categery
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdown"
+                  style="background-color: #1c1c50"
+                >
+                  <li><a class="dropdown-item" href="#">T-Shirt</a></li>
+                  <li><a class="dropdown-item" href="#">Hoodies</a></li>
+                  <li><a class="dropdown-item" href="#">Pants</a></li>
+                  <li><a class="dropdown-item" href="#">Soprts Shoes</a></li>
+                  <li><a class="dropdown-item" href="#">Smart Watch</a></li>
+                  <li><a class="dropdown-item" href="#">Glasess</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                class="btn btn-outline-success"
+                type="submit"
+                id="search-btn"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+<!------------------------------------------- login ------------------------------------>
+
+
+ <div class="cantainer-login">
+    <div class="row">
+        <div class="col-md-4" id="side1">
+            <h3>Welcome Back!</h3>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <div id="btn"><a href="login.html">Login</a></div>
+
+        </div>
+        <div class="col-md-8" id="side2">
+            <h3>Create Accound!</h3>
+            <div class="inp">
+                <input type="text" placeholder=" Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="Password" required>
+            </div>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <div class="icon">
+                <i class="bx bxl-twitter"></i>
+                <i class="bx bxl-facebook"></i>
+                <i class="bx bxl-instagram"></i>
+            </div>
+            <div id="login"><button>LOG IN</button></div>
+
+        </div>
+    </div>
+  </div>
+
+    
+
+    
+
+   
+
+    <footer id="footer" style="margin-top: 50px;">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 footer-content">
+              <h3>Fashion</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, vitae.</p>
+              <p>
+                Karchi <br><br>
+                kota <br><br>
+                India <br><br>
+              </p>
+              <strong><i class='bx bxs-phone'></i> Phone: <strong>+1234567890</strong></strong>
+                <strong><i class='bx bxs-envelope'></i> Email: <strong>example@gmail.com</strong></strong>
+            </div>
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Usefull Links</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Privacy Policay</a></li>
+               
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Our Services</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. modi, ren!</p>
+              <ul>
+                <li><a href="#"></a>Smart Phone</li>
+                <li><a href="#"></a> Smart Watch</li>
+                <li><a href="#"></a>Airpods</li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Our Social Network</h4>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, esse?</p>
+              <div class="social-links mt-3">
+
+                <a href="#" class="twitter"><i class='bx bxl-twitter'></i></a>
+                <a href="#" class="twitter"><i class='bx bxl-facebook'></i></a>
+                <a href="#" class="twitter"><i class='bx bxl-google'></i></a>
+                <a href="#" class="twitter"><i class='bx bxl-instagram'></i></a>
+                <a href="#" class="twitter"><i class='bx bxl-linkedin'></i></a>
+              </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="container py-4">
+        <div class="copyright">
+          &copy; copyright <strong>Fashion</strong>.All Right Reserved
+        </div>
+        <div class="credits">
+          Designed By <a href="#">VS Coding</a>
+        </div>
+      </div>
+
+
+    </footer>
+
+    <a href="#" class="arrow"><i><img src="" alt="" width="50px"></i></a>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+  
+    
+  </body>
+  </html> 
